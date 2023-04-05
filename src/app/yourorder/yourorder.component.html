@@ -1,0 +1,21 @@
+<app-header></app-header>
+<h1 class="text-muted">Your Order</h1>
+<h5 class="text-muted">Select item for Order</h5>
+
+<table class="table table-success">
+    <thead>
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col">Price</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let it of item; let k=index">
+        <td>{{it.foodName}}</td>
+        <td>{{it.price}}</td>
+
+        <td><button class="btn btn-danger" (click)="deleteFunction(yourOrder[k].id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>

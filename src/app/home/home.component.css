@@ -1,0 +1,19 @@
+.headerImage{
+ border-radius: 53%;
+ width: 138%;
+ height: 128%;
+ position: relative;
+ left: -47px;
+ bottom: 74px;
+}
+.imageDiv{
+    background-color: red;
+    width: 273px;
+    height: 288px;
+    border-radius: 84%;
+    position: relative;
+    top: 69px;
+}
+.getStarted{
+    width: 30%;
+}

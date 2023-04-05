@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<!-- <br><br>
+<table class="table table-success">
+    <thead>
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col">Price</th>
+        <th scope="col">Add</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let it of item">
+        <td>{{it.foodName}}</td>
+        <td>{{it.price}}</td>
+
+        <td><button class="btn btn-primary" (click)="addItemOfCustomer(it.id,customerData)">Add</button></td>
+      </tr>
+    </tbody>
+  </table> -->
+
+    <!-- Card layout -->
+
+    <div class="card text-center mt-5"  *ngFor="let it of item">
+        <div class="card-body">
+          <h5 class="card-title"> {{it.foodName}} </h5>
+          <p class="card-text">Price {{it.price}} </p>
+          <button  class="btn btn-primary" (click)="addItemOfCustomer(it.id,customerData)">Add</button>
+        </div>
+        <div class="card-footer text-body-secondary">
+             
+        </div> 
+      </div>
+
+
+
+
+
+  <div class="position-fixed bottom-0 end-0 p-3 toast-container" style="z-index: 5">
+    <div *ngFor="let toast of toasts">  
+      <app-toast [title]="toast.title" 
+       [date]="toast.date" [message]="toast.message" (closeHit)="toast.isShow = false"></app-toast>
+  </div>
+</div>

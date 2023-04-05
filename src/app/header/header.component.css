@@ -1,0 +1,23 @@
+.navButton{
+    border: none;
+    background: none;
+    color: white;
+}
+.customTable{
+    border: none !important;
+}
+.navButton1{
+    
+    background: none;
+    color: black;
+}
+.searchInputField{
+    border-radius:  0.375rem; 
+    width: 30%;
+
+}
+.cartBTN{
+    background: none;
+    border: none;
+    color: white;
+}

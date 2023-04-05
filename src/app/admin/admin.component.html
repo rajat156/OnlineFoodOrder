@@ -1,0 +1,22 @@
+
+<div class="">
+    <img class="imageDiv img-fluid" [src]="adminLoginImage">
+    <div class="loginDiv">
+       <div class="text-center text-white"><fa-icon [icon]="logo"></fa-icon><h2>WELCOME</h2> </div>
+       <br>
+       <div class="formDiv">
+        <form #adminForm="ngForm"  (ngSubmit)="checkAdmin(adminForm.value); adminForm.resetForm()" ngNativeValidate>
+            <label for="EmailInput">Email </label>
+            <input  type="email" ngModel id="EmailInput" name="email" class="form-control" required/>
+            <br>
+            <label for="PasswordInput">Password</label>
+            <input  type="password" ngModel name="password" id="PasswordInput" class="form-control" required/>
+            <br><br>
+           <div class="text-center d-grid gap-2"> <button class="btn btn-primary loginButton"><strong>Login </strong></button> </div>
+        </form>
+           <div  class="text-center"><label><a href="" style="text-decoration: none;">Don't have an Account</a></label></div>
+            <div class="text-center mt-5" ><strong style="color: red;"> {{notMatch}} </strong></div>
+     </div>
+    </div>
+</div>
+
