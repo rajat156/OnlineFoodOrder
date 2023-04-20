@@ -1,8 +1,11 @@
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="/order/{{customerData}}">Live for Food</a>
-      <input class="searchInputField form-control" #searchInput type="search" placeholder="Search" aria-label="Search" (keyup)="searchItem(searchInput.value)">
-      <button class="cartBTN" routerLink="/yourOrder/{{customerData}}">YOUR CART<fa-icon [icon] = "cartIcon"></fa-icon></button>
+     <!--  <input class="searchInputField form-control" #searchInput type="search" placeholder="Search" aria-label="Search" (keyup)="searchItem(searchInput.value)"> -->
+     &nbsp;&nbsp;<a></a><a></a><a></a>
+     <button class="todayDealsButton text-white"><fa-icon [icon]="nearbyStoreIcon"></fa-icon> NEARBY STORE</button>
+     <button class="todayDealsButton text-white"><fa-icon [icon]="todayDealIcon"></fa-icon> TODAY DEALS</button>
+      <button class="cartBTN" routerLink="/yourOrder/{{customerData}}">CART<fa-icon [icon] = "cartIcon"></fa-icon></button>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,10 +34,3 @@
 <br>
 
 <!-- Successful message after add item -->
-
-<div class="position-fixed bottom-0 end-0 p-3 toast-container" style="z-index: 5">
-    <div *ngFor="let toast of toasts">  
-      <app-toast [title]="toast.title" 
-       [date]="toast.date" [message]="toast.message" (closeHit)="toast.isShow = false"></app-toast>
-  </div>
-</div>

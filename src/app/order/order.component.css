@@ -1,0 +1,17 @@
+@media all and (max-width: 2000px) and (min-width: 800px){
+    .sliderCustom{
+     width:1279px;
+     height:272px; 
+      }
+  }
+  @media all and (max-width: 799px) and (min-width: 500px){
+    .sliderCustom{
+     width:500px;
+     height:272px; 
+      }
+  }
+
+  .customButton{
+    background: none;
+    border: none;
+  }

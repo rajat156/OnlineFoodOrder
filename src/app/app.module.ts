@@ -14,6 +14,8 @@ import { AdminComponent } from './admin/admin.component';
 import { BurgerComponent } from './burger/burger.component';
 import { AlldataComponent } from './admin/alldata/alldata.component';
 import { AdminheaderComponent } from './admin/alldata/adminheader/adminheader.component';
+import { OrderComponent } from './order/order.component';
+import { DeesertsComponent } from './deeserts/deeserts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { AdminheaderComponent } from './admin/alldata/adminheader/adminheader.co
     AdminComponent,
     BurgerComponent,
     AlldataComponent,
-    AdminheaderComponent
+    AdminheaderComponent,
+    OrderComponent,
+    DeesertsComponent
   ],
   imports: [
     BrowserModule,

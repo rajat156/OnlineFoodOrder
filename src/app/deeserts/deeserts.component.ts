@@ -1,28 +1,25 @@
-import { Component , Input} from '@angular/core';
+import { Component,Input } from '@angular/core';
 import {ItemserviceService} from '../itemservice.service';
 import {ActivatedRoute} from '@angular/router';
-import{} from '@fortawesome/free-regular-svg-icons';
 @Component({
-  selector: 'app-burger',
-  templateUrl: './burger.component.html',
-  styleUrls: ['./burger.component.css']
+  selector: 'app-deeserts',
+  templateUrl: './deeserts.component.html',
+  styleUrls: ['./deeserts.component.css']
 })
-export class BurgerComponent {
-
-  
+export class DeesertsComponent {
 
   item:any;
   isToast:boolean=false;
   @Input() customerData:any='';
-  constructor(private itemservice:ItemserviceService,private route:ActivatedRoute){
+  constructor(private route:ActivatedRoute,private itemService:ItemserviceService){
     this.customerData=this.route.snapshot.paramMap.get('id');
-    this.itemservice.getFoodByItem('BURGER').subscribe((item)=>{
+    this.itemService.getFoodByItem('DESSERTS').subscribe((item)=>{
       this.item=item;
     })
   }
 
   addItemOfCustomer(itemId:any,customerId:any){
-    this.itemservice.addItemOfCustomer(itemId,customerId).subscribe((item)=>{
+    this.itemService.addItemOfCustomer(itemId,customerId).subscribe((item)=>{
       this._toasts.forEach(f =>{
         f.isShow = true;
       })

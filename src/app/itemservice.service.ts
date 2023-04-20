@@ -6,10 +6,10 @@ import {HttpClient} from '@angular/common/http'
 export class ItemserviceService {
 
   constructor(private http:HttpClient) { }
-  url='http://localhost:8087/getAllFood';
-  urlPostRecord='http://localhost:8087/saveRecord';
-  urlSearchRecord='http://localhost:8087/searchFood';
-  urlgetYourOrder='http://localhost:8087/getRecord';
+  url='http://localhost:8085/getAllFood';
+  urlPostRecord='http://localhost:8085/saveRecord';
+  urlSearchRecord='http://localhost:8085/searchFood';
+  urlgetYourOrder='http://localhost:8085/getRecord';
   getFoodByItem(data:String){
     return this.http.get(this.url+'/'+data);
   }
@@ -28,9 +28,9 @@ export class ItemserviceService {
   }
 
   getClientRecord(data:any){
-    return this.http.get('http://localhost:8087/getClientRecord/'+data);
+    return this.http.get('http://localhost:8085/getClientRecord/'+data);
   }
   deleteItem(data:any){
-    return this.http.get('http://localhost:8087/deleteClientRecord/'+data);
+    return this.http.get('http://localhost:8085/deleteClientRecord/'+data);
   }
 }

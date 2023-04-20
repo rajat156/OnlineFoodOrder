@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
 import {faBurger} from '@fortawesome/free-solid-svg-icons'
 @Component({
   selector: 'app-home',
@@ -7,6 +8,8 @@ import {faBurger} from '@fortawesome/free-solid-svg-icons'
 })
 export class HomeComponent {
 
+  constructor(private route:ActivatedRoute){}
+  
   burgerIcon = faBurger;
   OrderFood:string = "assets/images/HomePage.png";
   OrderFoodImage:boolean=true;

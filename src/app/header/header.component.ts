@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
-import {ItemserviceService} from '../itemservice.service'
-import {faCartArrowDown} from '@fortawesome/free-solid-svg-icons'
+import { ActivatedRoute } from '@angular/router';
+import {ItemserviceService} from '../itemservice.service';
+import {faCartArrowDown} from '@fortawesome/free-solid-svg-icons';
+import {faPercentage} from '@fortawesome/free-solid-svg-icons';
+import {faBuilding} from '@fortawesome/free-regular-svg-icons';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,6 +12,8 @@ import {faCartArrowDown} from '@fortawesome/free-solid-svg-icons'
 
 export class HeaderComponent {
 
+  nearbyStoreIcon=faBuilding;
+  todayDealIcon=faPercentage;
   cartIcon = faCartArrowDown;
   customerData:any;
   foodByItem:any;

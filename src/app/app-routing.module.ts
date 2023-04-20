@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { YourorderComponent } from './yourorder/yourorder.component';
 import {FormsModule}  from '@angular/forms'
 import { AlldataComponent } from './admin/alldata/alldata.component';
+import { OrderComponent } from './order/order.component';
+import { DeesertsComponent } from './deeserts/deeserts.component';
 const routes: Routes = [
   {
     path:'home',
@@ -17,7 +19,7 @@ const routes: Routes = [
 },
 {
   path:'order/:id',
-  component:HeaderComponent
+  component:OrderComponent
 },
 {
   path:'admin',
@@ -34,7 +36,8 @@ const routes: Routes = [
 {
   path:'abcjkabckj_akbcak',
   component:AlldataComponent
-}
+},
+{path:'desserts/:id',component:DeesertsComponent}
 
 ];
 
