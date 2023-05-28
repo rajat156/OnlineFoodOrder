@@ -1,0 +1,81 @@
+<app-header></app-header>
+
+<!--  -->
+<br><br>
+<div>
+    <span class="align-middle ms-5"> <button class="verticalHistoryButton text-muted"
+            routerLink="/order/{{customerData}}">Home</button> </span>
+    <span class="align-middle"><strong style="font-size: 14px;"><svg xmlns="http://www.w3.org/2000/svg" width="14"
+                height="14" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg> MENU </strong></span>
+</div>
+
+<div class="row" style="width: 100%;">
+    <div class="col">
+        <button class="customButton" routerLink="/burger/{{customerData}}">
+            <img style="width: 50px;"
+                [src]="'https://d1rgpf387mknul.cloudfront.net/category/Home/web/1x_web_20201214094806671040_114x101png'">
+            <br>
+            <strong>BURGER</strong>
+        </button>
+    </div>
+    <div class="col">
+        <button class="customButton" routerLink="/desserts/{{customerData}}">
+            <img style="width: 50px;"
+                [src]="'https://d1rgpf387mknul.cloudfront.net/category/Home/web/1x_web_20230323101510291262_114x101png'">
+            <br>
+            <strong>DESSERTS</strong>
+        </button>
+    </div>
+
+    <div class="col">
+        <button class="customButton" routerLink="/pizza/{{customerData}}">
+            <img
+                [src]="'https://img.freepik.com/premium-vector/pizza-logo-template-suitable-restaurant-cafe-logo_607277-267.jpg?w=50'">
+            <br>
+            <strong>PIZZA</strong>
+        </button>
+    </div>
+
+    <div class="col">
+        <button class="customButton" routerLink="/sandwich/{{customerData}}" routerLinkActive="active">
+            <img style="width: 63px;"
+                [src]="'https://previews.123rf.com/images/findriyani/findriyani2003/findriyani200300509/142382840-sandwich-logo-design-vector-illustration.jpg'">
+            <br>
+            <strong>SANDWICH</strong>
+        </button>
+    </div>
+
+    <!-- <div class="col">
+        <button class="customButton">
+            <img [src]="'https://img.freepik.com/premium-vector/cold-drink-glass-logo_674202-130.jpg?w=50'">
+            <br>
+            <strong>COLD DRINK</strong>
+        </button>
+    </div> -->
+</div>
+
+<div class="container text-center">
+    <div class="row row-cols-2">
+        <div class="col mt-3" *ngFor="let it of item">
+            <div class="card customCard">
+                <img src={{it.url}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"> {{it.foodName}} </h5>
+                    <p class="card-text">PRICE- {{it.price}} Rs </p>
+                    <button (click)="addItemOfCustomer(it.id,customerData)" class="btn btn-primary">ADD</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="position-fixed bottom-0 end-0 p-3 toast-container" style="z-index: 5">
+    <div *ngFor="let toast of toasts">
+        <app-toast [title]="toast.title" [date]="toast.date" [message]="toast.message"
+            (closeHit)="toast.isShow = false"></app-toast>
+    </div>
+</div>

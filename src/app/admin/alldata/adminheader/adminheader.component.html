@@ -1,20 +1,26 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Today Orders</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Add Item</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Today special offer</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">Here all today order</div>
-    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
-    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
-    <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
-  </div>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" routerLink="/admin/todayOrder" routerLinkActive="active" id="home-tab" data-bs-toggle="tab"
+      data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Today
+      Orders</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" routerLink="/admin/additem" routerLinkActive="active" data-bs-toggle="tab"
+      data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
+      aria-selected="false">All Item</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="contact-tab" routerLink="/admin/todayOffer" routerLinkActive="active"
+      data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane"
+      aria-selected="false">Today special offer</button>
+  </li>
+  <li class="nac+v-item" role="presentation">
+    <button class="nav-link" routerLink="/admin/booking" routerLinkActive="active">
+      Booking Request
+    </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" (click)="logout()" id="disabled-tab" data-bs-toggle="tab"
+      data-bs-target="#disabled-tab-pane" type="button" role="tab">Sign out</button>
+  </li>
+</ul>

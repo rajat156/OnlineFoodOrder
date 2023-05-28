@@ -1,24 +1,27 @@
 <app-header></app-header>
 <div class="scrollspy-example bg-body-tertiary">
   <div class="sliderCustom">
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img [src]="'https://d1rgpf387mknul.cloudfront.net/products/Home/ms/2x_ms_20221125151004547288_750x400jpg'" style="height: 272px;" class="d-block w-100" alt="...">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img [src]="'https://d1rgpf387mknul.cloudfront.net/products/Home/ms/2x_ms_20221125151004547288_750x400jpg'"
+            style="height: 272px;" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img [src]="'assets/images/Pizza.jpg'" style="height: 272px;" class="d-block w-100" alt="...">
+        </div>
       </div>
-      <div class="carousel-item">
-        <img [src]="'assets/images/Pizza.jpg'" style="height: 272px;" class="d-block w-100" alt="...">
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
   </div>
 
   <br>
@@ -28,46 +31,46 @@
   <br>
   <div class="row" style="width: 100%;">
     <div class="col">
-      <button class="customButton" routerLink="/burger/{{customerData}}"> 
+      <button class="customButton" routerLink="/burger/{{customerData}}">
         <img [src]="'https://d1rgpf387mknul.cloudfront.net/category/Home/web/1x_web_20201214094806671040_114x101png'">
         <br>
         <strong>BURGER</strong>
-    </button>
+      </button>
     </div>
     <div class="col">
-      <button class="customButton" routerLink="/desserts/{{customerData}}"> 
+      <button class="customButton" routerLink="/desserts/{{customerData}}">
         <img [src]="'https://d1rgpf387mknul.cloudfront.net/category/Home/web/1x_web_20230323101510291262_114x101png'">
         <br>
         <strong>DESSERTS</strong>
-    </button>
+      </button>
     </div>
 
     <div class="col">
-      <button class="customButton"> 
-        <img [src]="'https://img.freepik.com/premium-vector/pizza-logo-template-suitable-restaurant-cafe-logo_607277-267.jpg?w=100'">
+      <button class="customButton" routerLink="/pizza/{{customerData}}">
+        <img
+          [src]="'https://img.freepik.com/premium-vector/pizza-logo-template-suitable-restaurant-cafe-logo_607277-267.jpg?w=100'">
         <br>
         <strong>PIZZA</strong>
-    </button>
+      </button>
     </div>
 
     <div class="col">
-      <button class="customButton"> 
-        <img style="width: 130px;" [src]="'https://previews.123rf.com/images/findriyani/findriyani2003/findriyani200300509/142382840-sandwich-logo-design-vector-illustration.jpg'">
+      <button class="customButton" routerLink="/sandwich/{{customerData}}">
+        <img style="width: 130px;"
+          [src]="'https://previews.123rf.com/images/findriyani/findriyani2003/findriyani200300509/142382840-sandwich-logo-design-vector-illustration.jpg'">
         <br>
         <strong>SANDWICH</strong>
-    </button>
+      </button>
     </div>
 
-    <div class="col">
-      <button class="customButton"> 
+    <!-- <div class="col">
+      <button class="customButton">
         <img [src]="'https://img.freepik.com/premium-vector/cold-drink-glass-logo_674202-130.jpg?w=105'">
         <br>
         <strong>COLD DRINK</strong>
-    </button>
-    </div>
+      </button>
+    </div> -->
   </div>
-  </div>
-
-  <div>
-    
-  </div>
+</div>
+<br><br>
+<app-footer></app-footer>

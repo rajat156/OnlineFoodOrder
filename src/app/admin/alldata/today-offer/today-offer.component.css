@@ -1,0 +1,37 @@
+.customModel {
+    background-color: #e5edea;
+}
+
+.parentDiv {
+    width: 50%;
+    position: relative;
+    left: 27%;
+    top: 5%;
+}
+
+
+@media all and (max-width: 2000px) and (min-width: 800px) {
+    .customCard {
+        width: 13rem;
+    }
+}
+
+@media all and (max-width: 799) and (min-width : 100) {
+    .customCard {
+        width: 3rem;
+    }
+
+}
+
+.verticalHistoryButton {
+    border: none;
+    background: none;
+    font-size: 12px;
+}
+
+.customButton {
+    background: none;
+    border: none;
+    height: 70px;
+    overflow: hidden;
+}

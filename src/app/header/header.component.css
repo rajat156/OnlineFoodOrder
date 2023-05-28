@@ -1,28 +1,42 @@
-.navButton{
+.navButton {
     border: none;
     background: none;
     color: white;
 }
-.customTable{
+
+.customTable {
     border: none !important;
 }
-.navButton1{
-    
+
+.navButton1 {
+
     background: none;
     color: black;
 }
-.searchInputField{
-    border-radius:  0.375rem; 
+
+.searchInputField {
+    border-radius: 0.375rem;
     width: 30%;
 
 }
-.cartBTN{
+
+.cartBTN {
     background: none;
     border: none;
     color: white;
 }
-.todayDealsButton{
+
+.todayDealsButton {
     background: none;
     border: none;
 
+}
+
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: #797979 !important;
+}
+
+.active {
+    color: blue;
 }

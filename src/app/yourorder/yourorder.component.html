@@ -1,21 +1,84 @@
 <app-header></app-header>
-<h1 class="text-muted">Your Order</h1>
+<h1 class="text-muted">Your Order <span style="margin-left: 49%; font-size: medium;">Amount : {{bill}} </span> <button
+    class="btn btn-success" (click)="popupBar()">Submit Order</button> &nbsp;&nbsp; <button class="btn btn-primary"
+    (click)="customerHistory()">History</button> </h1>
 <h5 class="text-muted">Select item for Order</h5>
-
+<div class="maequeeMaster">
+  <div class="marquee">
+    <!-- Content to be scrolled -->
+    <span>Your Customer Id is {{customerData}} Please remember it !!</span>
+  </div>
+</div>
 <table class="table table-success">
-    <thead>
-      <tr>
-        <th scope="col">Item</th>
-        <th scope="col">Price</th>
-        <th scope="col">Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let it of item; let k=index">
-        <td>{{it.foodName}}</td>
-        <td>{{it.price}}</td>
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Price</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let it of item; let k=index">
+      <td>{{it.foodName}}</td>
+      <td>{{it.price}}</td>
 
-        <td><button class="btn btn-danger" (click)="deleteFunction(yourOrder[k].id)">Delete</button></td>
-      </tr>
-    </tbody>
-  </table>
+      <td><button class="btn btn-danger" (click)="deleteFunction(yourOrder[k].id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Order History</h4>
+        <button type="button" (click)="closePopup()" class="btn-close" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="overflow: scroll;">
+        <div class="card mt-3" *ngFor="let data of customerHistoryData">
+          <div class="card-body">
+            <span>Date : {{data.data | date:'d/M/yy, h:mm a'}} </span><br>
+            <span *ngFor="let item of data.client">
+              <span>. {{item.food.foodName}} </span>
+              <span>&nbsp;&nbsp; Rs:{{item.food.price}} </span>
+              <br>
+            </span>
+            <span>Bill : {{data.bill}} </span>
+            <span *ngIf="data.flag === true" style="color: green;">Complete</span>&nbsp;&nbsp;&nbsp;
+            <span *ngIf="data.flag === false" style="color: red;">Pending</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- payment Model -->
+
+<div class="modal " tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyleBar}">
+  <div class="modal-dialog customModel" role="document">
+    <div class="modal-content">
+      <div class="modal-header customModel">
+        <button type="button" (click)="closePopupBar()" class="btn-close" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body customModel">
+        <div class="container text-center">
+          <div class="row row-cols">
+            <div class="col mt-3">
+              <div class="card customCard">
+                <img [src]="paymentBarcode" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Bill : {{bill}}</h5>
+                  <p class="card-text"> <button class="btn btn-success" (click)="submitOrder()">Submit</button> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

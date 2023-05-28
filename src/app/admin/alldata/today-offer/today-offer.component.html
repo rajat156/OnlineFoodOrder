@@ -1,0 +1,54 @@
+<app-adminheader></app-adminheader>
+
+<button class="btn btn-success mt-2 ms-5" (click)="openPopup()">Add Item</button>
+
+<div class="container text-center">
+    <div class="row row-cols-2">
+        <div class="col mt-3" *ngFor="let it of item">
+            <div class="card customCard">
+                <img src={{it.url}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"> {{it.foodName}} </h5>
+                    <p class="card-text">PRICE- {{it.price}} Rs </p>
+                    <button (click)="deleteItem(it.id)" style="border: none; background: none;">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal " tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog customModel" role="document">
+        <div class="modal-content">
+            <div class="modal-header customModel">
+                <h4 class="modal-title">Add Item</h4>
+                <button type="button" (click)="closePopup()" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body customModel">
+                <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+                    <form class="row g-3 modal-body" #form="ngForm" (ngSubmit)="addItem(form.value)">
+                        <div class="col-12">
+                            <label for="inputEmail4" class="form-label">Food Name</label>
+                            <input type="text" ngModel class="form-control" name="foodName" id="inputEmail4">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputPassword4" class="form-label">Price</label>
+                            <input type="number" ngModel class="form-control" name="price" id="inputPassword4">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress2" class="form-label">Image URL</label>
+                            <input type="text" ngModel class="form-control" id="inputAddress2" name="url">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

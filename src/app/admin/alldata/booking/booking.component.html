@@ -1,0 +1,20 @@
+<app-adminheader></app-adminheader>
+
+
+<div class="card mb-3 ms-3" *ngFor="let data of bookingRequest">
+    <div class="card-body">
+        <h5>Request Date : {{data.requestDate | date:'d/M/yy, h:mm a'}}</h5>
+        <h3>Customer Name: {{ data.customerName}} </h3>
+        <h3>Mobile Number : {{data.number}}</h3>
+        <h3>Date : {{data.date}} </h3>
+        <span *ngIf="data.status ==false && data.reject==false">
+            <button class="btn btn-danger" (click)="rejectRequest(data.id)">Reject</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success" (click)="acceptRequest(data.id)">Accept</button>
+        </span>
+        <button *ngIf="data.status ==true && data.completeStatus == false" class="btn btn-success"
+            (click)="completeRequest(data.id)">Complete</button>
+        <span *ngIf="data.completeStatus==true" style="color: green;">Complete on : {{data.completeDate | date:'d/M/yy, h:mm a'}} </span>
+        <span *ngIf="data.reject==true" style="color: red;">Request Reject on : {{data.completeDate | date:'d/M/yy, h:mm a'}} </span>
+    </div>
+</div>
